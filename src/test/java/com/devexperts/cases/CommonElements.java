@@ -1,13 +1,15 @@
-package com.devexperts.configuration;
+package com.devexperts.cases;
 
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
 public class CommonElements {
     private Page page;
     private String searchbarLocator = "//input[@name='keyword']";
     private String searchTitleLocator = "//div[@class='SearchListItem__title__text']";
-    private String videoPlayIconLocator = "//button[@class='Overlay__playButton__icon']";
+    private String videoPlayIconLocator = "//button[@aria-label='Play video']";
     private String videoTimerLocator = "//span[@class='VideoPlayerControls__controls__time']";
+    private String headerElementsLocator = "//li[@class='MainMenu__item']";
 
     public CommonElements(Page page) {
         this.page = page;
@@ -24,8 +26,11 @@ public class CommonElements {
         return textTitle;
     }
 
-    public void clickOnLInk(String linkText) {
-        page.getByText(linkText).click();
+    public void clickOnLInk(String linkText) {page.getByText(linkText).click();}
+
+    public void clickOnTheHeaderElement(int index) {
+        Locator headerLinks = page.locator(headerElementsLocator);
+        headerLinks.nth(index).click();
     }
 
     public void clickOnVideoPlayIcon() {

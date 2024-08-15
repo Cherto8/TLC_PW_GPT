@@ -1,6 +1,6 @@
 package com.devexperts.cases.articles;
-import com.devexperts.PlaywrightFactory;
-import com.devexperts.configuration.CommonElements;
+import com.devexperts.cases.PlaywrightFactory;
+import com.devexperts.cases.CommonElements;
 import com.microsoft.playwright.Page;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -30,16 +30,14 @@ public class CommonTests extends PlaywrightFactory {
     }
 
     @Test
-    public void articleVideoPlayTest() {
-        String videoStartTime = "00:00/20:32";
-        commonElements.clickOnLInk("thinkManual");
+    public void articleVideoPlayTest() throws InterruptedException {
+        commonElements.clickOnTheHeaderElement(0);
         commonElements.clickOnVideoPlayIcon();
-        String currentVideoTime = commonElements.getCurrentVideoTime();
-        Assertions.assertNotEquals(videoStartTime, currentVideoTime);
+        String videoStartTime = commonElements.getCurrentVideoTime();
+        Thread.sleep(2000);
+        String videoCurrentTime = commonElements.getCurrentVideoTime();
+        Assertions.assertNotEquals(videoStartTime, videoCurrentTime);
     }
-
-
-
 
    @AfterEach
    public void tearDown() {

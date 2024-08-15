@@ -1,4 +1,4 @@
-package com.devexperts;
+package com.devexperts.cases;
 
 import com.microsoft.playwright.*;
 
