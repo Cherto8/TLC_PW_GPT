@@ -1,0 +1,23 @@
+{
+  "name": "tlc_pw_automation",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "PW_AI_TLC",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prepublishOnly": "mv README.md tmp.README.md && cp ../../README.md README.md",
+    "postpublish": "mv tmp.README.md README.md",
+    "release": "npm run build && npm publish --access public"
+  },
+  "author": "VM",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.21.0",
+    "@zerostep/playwright": "^1.0.0",
+    "bufferutil": "^4.0.1",
+    "utf-8-validate": "^5.0.2"
+  }
+}
