@@ -21,10 +21,11 @@ public class CommonTests extends PlaywrightFactory {
    }
 
     @Test
-    public void landingPageSearchTest() {
+    public void searchSuggestionTest() {
         String expectedKeyword = "Order Statuses";
-        commonElements.searchByKeyword(expectedKeyword);
-        String actualKeyword = commonElements.getLandingPageTextTitle();
+        commonElements.typeKeywordInSearchbar(expectedKeyword);
+        commonElements.clickOnListResult(0);
+        String actualKeyword = commonElements.getArticleTitleText();
         Assertions.assertEquals(expectedKeyword, actualKeyword);
     }
 

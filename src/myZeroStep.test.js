@@ -3,15 +3,15 @@ import { ai } from '@zerostep/playwright';
 import assert from 'node:assert';
 import { launchChrome, waitFor } from './utils.js';
 
-test('Landing page - Search test', async ({ page }) => {
+test('Search - Search suggestion test', async ({ page }) => {
   const aiArgs = { page, test }
   const expectedSearchText = 'Order Statuses'
 
   await page.goto('https://toslc.thinkorswim.com')
   await ai('Click on the search box', aiArgs)
   await ai(`Type "${expectedSearchText}" in the search box`, aiArgs)
-  await ai('Submit', aiArgs)
-  const actualSearchText = await ai('Get search result', aiArgs)
+  await ai("Click on AutocompleteMenuItem__item__content", aiArgs)
+  const actualSearchText = await ai('Get title', aiArgs)
   console.log('Actual Search Text: ', actualSearchText)
   assert(actualSearchText.includes(expectedSearchText))
 })
