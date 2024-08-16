@@ -1,4 +1,4 @@
-package com.devexperts.cases;
+package com.devexperts.pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
@@ -15,18 +15,20 @@ public class CommonElements {
         this.page = page;
     }
 
-    public void searchByKeyword(String keyword){
+    public void searchByKeyword(String keyword) {
         page.locator(searchbarLocator).click();
         page.locator(searchbarLocator).fill(keyword);
         page.locator(searchbarLocator).press("Enter");
     }
 
     public String getLandingPageTextTitle() {
-       String textTitle = page.locator(searchTitleLocator).first().innerText();
+        String textTitle = page.locator(searchTitleLocator).first().innerText();
         return textTitle;
     }
 
-    public void clickOnLInk(String linkText) {page.getByText(linkText).click();}
+    public void clickOnLInk(String linkText) {
+        page.getByText(linkText).click();
+    }
 
     public void clickOnTheHeaderElement(int index) {
         Locator headerLinks = page.locator(headerElementsLocator);

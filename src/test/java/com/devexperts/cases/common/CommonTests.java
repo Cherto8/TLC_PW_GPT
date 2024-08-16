@@ -1,12 +1,11 @@
-package com.devexperts.cases.articles;
-import com.devexperts.cases.PlaywrightFactory;
-import com.devexperts.cases.CommonElements;
+package com.devexperts.cases.common;
+import com.devexperts.PlaywrightFactory;
+import com.devexperts.pages.CommonElements;
 import com.microsoft.playwright.Page;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 
 public class CommonTests extends PlaywrightFactory {
 
