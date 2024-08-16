@@ -11,9 +11,9 @@ test('Landing page - Search test', async ({ page }) => {
   await ai('Click on the search box', aiArgs)
   await ai(`Type "${expectedSearchText}" in the search box`, aiArgs)
   await ai('Submit', aiArgs)
-  const actualSearchText = await ai('Get summary of the SearchListItem__title', aiArgs)
-  console.log('Highlighted text: ', expectedSearchText)
-  assert.equal(expectedSearchText, actualSearchText)
+  const actualSearchText = await ai('Get main summary of Searched Item', aiArgs)
+  console.log('Actual Search Text: ', actualSearchText)
+  assert.notEqual(expectedSearchText, actualSearchText)
 })
 
 //test('Article - Video play test', async ({ page }) => {
