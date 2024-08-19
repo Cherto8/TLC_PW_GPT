@@ -28,3 +28,13 @@ ZeroStep enables easy reuse of test components, improving test maintenance and s
 ### Continuous Integration: 
 Seamlessly integrated with TeamCity, allowing automated test runs with every code commit or on a schedule.
 
+### !!! In order to run the tests you may need to download and install some dependencies for @ZeroStep
+@ZeroStep - https://github.com/zerostep-ai/zerostep/blob/main/README.md
+
+
+## Executing ZeroStep tests:
+npx playwright test src/myZeroStep.test.js
+
+## Executing PlayWright and ApplitoolsEyes tests:
+mvn clean test
+
