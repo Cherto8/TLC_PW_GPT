@@ -39,7 +39,10 @@ npx playwright test src/myZeroStep.test.js
 mvn clean test
 
 ## Paths to source code of the tests:
-### Applitools test: src/test/java/com/devexperts/applitools/LocalizationApplitoolsEyesTests.java
-### ZeroStep test: src/myZeroStep.test.js
-### JUnit test: src/test/java/com/devexperts/cases/common/CommonTests.java
+### Applitools test: 
+src/test/java/com/devexperts/applitools/LocalizationApplitoolsEyesTests.java
+### ZeroStep test: 
+src/myZeroStep.test.js
+### JUnit test: 
+src/test/java/com/devexperts/cases/common/CommonTests.java
 
